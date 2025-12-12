@@ -186,7 +186,7 @@ Marseille - Paris 25/12/2025 places restante 2
 
 
 Exemple de user :
-email : veronique.cuomo@formation.studi
+email : tester@formation.studi
 mdp : 12345678
 
 **Bonne développement avec EcoRide ! 🚗♻️**
