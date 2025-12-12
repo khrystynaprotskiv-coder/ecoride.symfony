@@ -1,14 +1,12 @@
 {% apply inky_to_html %}
     <container>
-        {{ message }}
+        <row class="header">
+            <columns>
+                <spacer size="16"></spacer>
+                <h1 class="text-center">Bienvenu {{email.toName}} !</h1>
+            </columns>
+            {{message}}
+
+        </row>
     </container>
-{% endapply %}
-
-{% apply markdown_to_html %}
-    #Nouveu message de contact
-
-    -NOM : {{ name }}
-    -EMAIL : {{ email }}
-    
-    {{ message }}
 {% endapply %}
