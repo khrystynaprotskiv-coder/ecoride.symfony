@@ -1,0 +1,56 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Travel{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div class="main">
+    <div class="cont-trav-pers">
+    <a href="{{ path('travel_crud_index') }}">back to list</a>
+    <div class="main-inf-traj">
+        <h2>{{ travel.dateDepart ? travel.dateDepart|format_date( 'full', locale: 'fr') : ''  }}<h2>
+        <h2>{{ travel.dateArrive ? travel.dateArrive|format_date( 'full', locale: 'fr') : '' }}<h2>
+    </div>
+    
+    <fieldset class="second-inf-traj">
+    <div>
+        <p class="descrip-perso">{{ travel.timeDepart ? travel.timeDepart|date('H:i') : '' }}</p>
+        <p class="descrip-perso">{{ travel.placeDepart }}</p>
+    </div>
+    <div>
+        <p class="descrip-perso">{{ travel.timeArrive ? travel.timeArrive|date('H:i') : '' }}</p>
+        <p class="descrip-perso"> {{ travel.placeArrive }}</p>
+    </div>
+    </fieldset>
+
+    <fieldset class="third-inf-traj">
+        <div>
+            <p class="title-perso">Il y a {{ travel.nbPlaces }} places libres</p>
+            <p class="title-perso">C’est un trajet ecologique</p>
+        </div>
+        <p class="descrip-prix">{{ travel.price }} €</p>
+        
+    </fieldset>
+
+    <div class="butt_prt">
+        <a class="form-conf" href="{{ path('travel_participer', {'id': travel.id}) }}">Participer</a>
+        
+        <a class="btn-insc" href="{{ path('travel_crud_edit', {'id': travel.id}) }}">edit</a>
+    </div>
+    <fieldset class="four-inf-traj">
+        <p class="descrip-perso"> {{ travel.owner.name}} {{ travel.owner.surname}}</p>
+        <p class="descrip-perso"> {{ travel.owner.email}}</p>
+    </fieldset>
+
+    
+
+    
+
+    </div>
+</div>
+</div>
+
+    
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{{ form_errors(form2) }}
+
+    {{ form_start(form2) }}
+    
+        {{ form_row(form2.price) }}
+
+        
+        <div class="form-item">
+            <label for="NomInput">Durée maximum</label>
+            <input type="text" id="durationMax" name="durationMax" placeholder="0 h">
+        </div>
+
+        <div class="form-item">
+            <label for="NomInput">Note minimale</label>
+            <input type="text" id="minRating" name="minRating" placeholder="0">
+        </div>
+
+        <button type="submit" class="search">Trier</button>
+    
+    {{ form_end(form2) }}

@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+<div class="body">
+    <div class="main">
+            
+            {{ form_errors(registrationForm) }}
+        <div class="container">
+            <h1 class="titel-contact">Inscription</h1>
+            <div class="form-items">
+
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.name) }}
+                    {{ form_row(registrationForm.surname) }}
+                    {{ form_row(registrationForm.telephone) }}
+                    {{ form_row(registrationForm.adress) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                    {{ form_row(registrationForm.agreeTerms) }}
+
+                    <div class="form-item">
+                        <button type="submit" class="form-conf">Créer mon profil</button>
+                    </div>
+
+                    <div class="form-item">
+                        <p class="qsq">Vous avez déja votre compte?</p>
+                        <a class="btn-insc" href="{{ path('app_login')}}">Connecter</a>    
+                    </div>
+                {{ form_end(registrationForm) }}
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

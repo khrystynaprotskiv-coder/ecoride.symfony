@@ -1,0 +1,14 @@
+{% apply inky_to_html %}
+    <container>
+        {{ message }}
+    </container>
+{% endapply %}
+
+{% apply markdown_to_html %}
+    #Nouveu message de contact
+
+    -NOM : {{ name }}
+    -EMAIL : {{ email }}
+    
+    {{ message }}
+{% endapply %}

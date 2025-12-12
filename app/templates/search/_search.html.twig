@@ -1,0 +1,13 @@
+
+{{ form_errors(form) }}
+
+    {{ form_start(form) }}
+    <div class="search_bar">
+        {{ form_row(form.placeDepart) }}
+        {{ form_row(form.placeArrive) }}
+        {{ form_row(form.dateDepart) }}
+        {{ form_row(form.nbPlaces) }}
+        <button class="search">Rechercer</button>
+    </div>
+    {{ form_end(form) }}
+

@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Modification de trajet{% endblock %}
+
+{% block content %}
+   
+
+    {{ include('travel_crud/_form.html.twig', {'button_label': 'Update'}) }}
+
+   
+
+    {{ include('travel_crud/_delete_form.html.twig') }}
+{% endblock %}

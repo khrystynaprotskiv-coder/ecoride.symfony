@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div class="main">
+        <div class="container">
+         <h1 class="titel-contact">{{ title }}</h1>
+            <div class="form-items">
+            
+            {{ form_start(form) }}
+                {{ form_row(form.brand) }}
+                {{ form_row(form.model) }}
+                {{ form_row(form.energy) }}
+                {{ form_row(form.color) }}
+                {{ form_row(form.registration) }}
+                {{ form_row(form.registrationAt) }}
+                
+                <div class="form-item">
+                    <button type="submit" class="form-conf">Enregistrer les modifications</button>
+                </div>
+
+                <div class="form-item">
+                    <a class="btn-insc" href="{{ path('profile_show')}}">Abandonner</a>    
+                </div>
+                
+            {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

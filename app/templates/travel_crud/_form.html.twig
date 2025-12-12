@@ -1,0 +1,22 @@
+<div class="body">
+    <div class="main">
+
+        <div class="container">
+            <h1 class="titel-contact">Votre trajet</h1>
+            <div class="form-items">
+
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <div class="form-item">
+                        <button class="form-conf">{{ button_label|default('Enregistrer') }}</button>
+                    </div>
+                {{ form_end(form) }}
+                
+                <div class="form-item">
+                    <a class="btn-insc" href="{{ path('travel_crud_index') }}">Voir la liste</a>    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

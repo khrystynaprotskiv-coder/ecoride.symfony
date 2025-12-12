@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+<div class="main">
+    <div class="container">
+
+        <h1 class="titel-contact">Contact avec nous</h1>
+        
+        <div class="form-items">
+            {{ form_start(contactForm) }}
+            
+                {{ form_row(contactForm.name) }}
+            
+                {{ form_row(contactForm.email) }}
+            
+                {{ form_row(contactForm.message) }}
+            
+                <div class="form-item">
+                    <button type="submit" class="form-conf">Envoyer le message</button>
+                </div>
+            
+            {{ form_end(contactForm) }}
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
+

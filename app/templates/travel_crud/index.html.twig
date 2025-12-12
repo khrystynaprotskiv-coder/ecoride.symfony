@@ -1,0 +1,65 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Travel index{% endblock %}
+
+{% block content %}
+<div class="main">
+
+    <div class="cont-trav">
+
+        <div class="search_bar">
+            {% include 'search/_search.html.twig' with {form: form} only %}
+        </div>
+
+        <div class="filter-travel">
+            {% include 'search/_filter.html.twig' with {form2: form2} only %}
+        </div>
+
+
+
+        <div class="travels-list">
+            {% for travel in travel %}
+            <div class="travel-item">
+                <div class="depart">
+                    <h3 class="depart-hours">{{ travel.timeDepart ? travel.timeDepart|date('H:i') : '' }}</h3>
+                    <h3 class="depart-hours">{{ travel.dateDepart ? travel.dateDepart|date('Y-m-d') : '' }}</h3>
+                    <h3 class="depart-city">{{ travel.placeDepart }}</h3>
+                </div>
+                
+                <div class="destination">
+                    <h3 class="depart-hours">{{ travel.timeDepart ? travel.timeArrive|date('H:i') : '' }}</h3>
+                    <h3 class="depart-hours">{{ travel.dateDepart ? travel.dateArrive|date('Y-m-d') : '' }}</h3>
+                    <h3 class="depart-city">{{ travel.placeArrive }}</h3>
+                </div>
+                <h2 class="price">{{ travel.price }} €</h2> 
+                
+                <div class="profil">
+                    <div class="profil-pic-wrapper">
+                        <img src="" class="profile-pic">
+                    </div>
+                    <h4 class="pseudo">User</h4>
+                    <p class="info-travel">5.3</p>
+                </div>
+                
+                <div class="passagers-info">
+                    <p class="info-travel">Il y a {{ travel.nbPlaces }} places libres</p>
+                </div>
+                <div class="eco-mark">
+                    <p class="info-travel">C’est un trajet ecologique</p>
+                </div>
+                
+                <a class="detail" href="{{ path('travel_crud_show', {id: travel.id})}} ">Détail</a>
+            </div>
+    
+            {% else %}
+                
+                    <h2 colspan="11">no records found</h2>
+                
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+    <a href="{{ path('travel_crud_new') }}">Create new</a>
+{% endblock %}

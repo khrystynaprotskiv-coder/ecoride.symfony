@@ -1,0 +1,79 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<section>
+        <h2>Gestion des utilisateurs</h2>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <caption>Liste des utilisateurs</caption>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Numéro de téléphone</th>
+                        <th>Adresse</th>
+                        <th>Date de naissance</th>
+                        <th class="text-center">
+                            <span aria-label="Modifier">
+                                <i class="bi bi-pen" aria-hidden="true"></i> 
+                            </span>                                    
+                        </th>
+                        <th class="text-center">
+                            <span aria-label="Supprimer">
+                                <i class="bi bi-trash" aria-hidden="true"></i> 
+                            </span>                                    
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    
+                        <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.name}}</td>
+                            <td>{{user.surname}}<a href=""></a></td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.telephone}}</td>
+                            <td>{{user.adress}}</td>
+                            <td>{{user.birthday}}</td>
+                            
+                            <td class="text-center">
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="btn btn-sm btn-primary" href="" aria-label="Modifier"><i class="bi bi-pen" aria-hidden="true"></i></a>
+                            {% endif %}
+                            </td>
+
+                            <td class="text-center">
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <form action="" method="post">
+                                    <button type="submit" class="btn btn-sm btn-danger" aria-label="Supprimer"><i class="bi bi-trash" aria-hidden="true"></i></button>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                
+                                </form>
+                            {% endif %}
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th score="row">Nombre d'articles</th>
+                        <td colspan="8"></td>
+                    </tr> 
+                </tfoot>
+            </table>
+        </div>
+
+
+</div>
+
+{% endblock %}

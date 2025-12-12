@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+
+<div class="body">
+    <div class="main">
+    <div class="container">
+        <h1 class="titel-contact">Modification</h1>
+        <div class="form-items">
+
+    {{ form_start(form) }}
+    
+        {{ form_row(form.name) }}
+        {{ form_row(form.surname) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.telephone) }}
+        {{ form_row(form.adress) }}
+        {{ form_row(form.birthday) }}
+        
+
+        <div class="form-item">
+            <button type="submit" class="form-conf">Enregistrer les modifications</button>
+        </div>
+
+        <div class="form-item">
+            <a class="btn-insc" href="{{ path('profile_show')}}">Abandonner</a>    
+        </div>
+
+        <div class="form-item">
+            <a class="btn-delete" href="{{ path('profile_delete',{id: user.id})}}">Supprimer mon compt</a>
+        </div>
+
+    {{ form_end(form) }}
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
