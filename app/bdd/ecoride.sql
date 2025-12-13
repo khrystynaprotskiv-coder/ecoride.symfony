@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 12 déc. 2025 à 11:33
+-- Généré le : sam. 13 déc. 2025 à 11:00
 -- Version du serveur : 8.0.44-0ubuntu0.24.04.1
 -- Version de PHP : 8.3.6
 
@@ -204,7 +204,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `name`, `surname`, `email`, `password`, `telephone`, `adress`, `birthday`, `photo`, `roles`, `is_verified`, `credits`) VALUES
 (2, 'Khrystyna', 'Protskiv', 'khrystyna.protskiv@gmail.com', '$2y$13$54UpEptTE5cj0R4EOqtoou89JbuLfSTySX5z19w9TuLoJ9M/Hbt0G', 749882251, 'jcghbsdvbs sjdnv sj bns dc', '1993-01-13', NULL, '[]', 1, 20),
 (5, 'Protskiv', 'Yurii', 'tester@gmail.com', '$2y$13$6ZvKSZwHb8hd5jO8N3loPu/V09jryAI7iVSdmGvGDdRpHj.MQLy62', 253315630, 'jcghbsdvbs sjdnv sj bns dc', NULL, NULL, '[]', 1, 15),
-(7, 'Vénique', 'Cuomo', 'veronique.cuomo@formation.studi', '$2y$10$tyGSq79pKsvka6tBeJI7R.Wm/y8Qm5zMm.y4CmjxfeKdh.QyVthbW', 15655605, 'knn fvk  jknk ,nb fvfnm dv', NULL, NULL, '[]', 1, 20);
+(7, 'John', 'Doe', 'tester@formation.studi', '$2y$10$tyGSq79pKsvka6tBeJI7R.Wm/y8Qm5zMm.y4CmjxfeKdh.QyVthbW', 15655605, 'knn fvk  jknk ,nb fvfnm dv', NULL, NULL, '[]', 1, 20);
 
 -- --------------------------------------------------------
 

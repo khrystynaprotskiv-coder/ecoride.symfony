@@ -150,11 +150,8 @@ final class TravelCrudController extends AbstractController
 
         $this-> addFlash('success', "Votre trajet " . $travel->getId() . " a été supprimé");
 
-        //Rediriger ver le tableau de bord
         return $this-> redirectToRoute('profile_show');
     }
-
-
 
 }
 
